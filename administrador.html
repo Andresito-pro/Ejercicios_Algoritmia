@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificación</title>
+</head>
+<body>
+  <h2>Verificación de Acceso</h2>
+
+  <label for="clave">Ingrese la clave:</label>
+  <input type="text" id="clave" placeholder="Escriba la clave"><br><br>
+
+  <button onclick="verificarAcceso()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificarAcceso() {
+      const claveIngresada = document.getElementById("clave").value.trim();
+      const claveCorrecta = "admin123"; 
+      const resultado = document.getElementById("resultado");
+
+      if (claveIngresada === "") {
+        resultado.textContent = "Por favor, ingrese una clave.";
+      } else if (claveIngresada === claveCorrecta) {
+        resultado.textContent = "Acceso concedido.";
+      } else {
+        resultado.textContent = "Acceso denegado.";
+      }
+    }
+  </script>
+</body>
+</html>
